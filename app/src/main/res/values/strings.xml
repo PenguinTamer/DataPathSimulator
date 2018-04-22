@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DataPathSimulator</string>
+    <string name="title_home">Home</string>
+    <string name="title_test">Test</string>
+    <string name="title_practice">Practice</string>
+    <string name="title_activity_practice">practice</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_test">Test</string>
+    <string name="title_activity_data_path_sim">Data Path Sim</string>
+    <string name="title_activity_practice_questions">Practice Questions</string>
+</resources>
