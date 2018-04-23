@@ -2,16 +2,7 @@ package salazar.cs3354.txstate.edu.datapathsimulator;
 
 public abstract class Question {
     String question;
-    String answer;
     int qID;
-
-    public String getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
 
     public String getQuestion() {
         return question;

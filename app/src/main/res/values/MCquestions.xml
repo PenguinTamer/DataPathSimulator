@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <question ID="1">
+        <questionText>question1</questionText>
+        <answer>answer1</answer>
+        <wrongChoice ID="1">wrong1.1</wrongChoice>
+        <wrongChoice ID="2">wrong1.2</wrongChoice>
+        <wrongChoice ID="3">wrong1.3</wrongChoice>
+    </question>
+    <question ID="2">
+        <questionText>question2</questionText>
+        <answer>answer2</answer>
+        <wrongChoice ID="1">wrong2.1</wrongChoice>
+        <wrongChoice ID="2">wrong2.2</wrongChoice>
+        <wrongChoice ID="3">wrong2.3</wrongChoice>
+    </question>
+    <question ID="3">
+        <questionText>question3</questionText>
+        <answer>answer3</answer>
+        <wrongChoice ID="1">wrong3.1</wrongChoice>
+        <wrongChoice ID="2">wrong3.2</wrongChoice>
+        <wrongChoice ID="3">wrong3.3</wrongChoice>
+    </question>
+
+
+    <!--MC Questions-->
+    <string name="q1">question1</string>
+    <String name="q2">question2</String>
+    <string name="q3">question3</string>
+    <!--MC Correct Answers
+        ## Naming convention -> qnA (n = question index, A = answer)-->
+    <string name="q1A">correctA1</string>
+    <string name="q2A">correctA2</string>
+    <string name="q3A">correctA3</string>
+    <!--MC wrong choices
+        ## Naming convention -> qnCm (n = question index, m = wrong choice index)-->
+    <string name="q1C1">q1c1-wrongans</string>
+    <string name="q1C2">q1c2-wrongans</string>
+    <string name="q1C3">q1c3-wrongans</string>
+
+    <string name="q2C1">q2c1-wrongans</string>
+    <string name="q2C2">q2c2-wrongans</string>
+    <string name="q2C3">q2c3-wrongans</string>
+
+    <string name="q3C1">q3c1-wrongans</string>
+    <string name="q3C2">q3c2-wrongans</string>
+    <string name="q3C3">q3c3-wrongans</string>
+</resources>

@@ -1,10 +1,12 @@
 package salazar.cs3354.txstate.edu.datapathsimulator;
 
-public class multipleChoice extends Question {
+import java.util.ArrayList;
 
-    public multipleChoice(String question, String answer, int qID) {
+public class multipleChoice extends Question {
+    ArrayList<String> untrueChoices;
+
+    public multipleChoice(int qID, String question, String answer) {
         this.setQuestion(question);
-        this.setAnswer(answer);
         this.setqID(qID);
     }
 }
