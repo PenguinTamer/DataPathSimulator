@@ -21,4 +21,22 @@ public class mcQuestionParserHandler extends DefaultHandler {
     public void endDocument() throws SAXException {
         //System.out.println("end of the document document     : ");
     }
+
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        this.elementStack.push(qName);
+        if ("question".equals(qName)) {
+            mcQuestion mcQuestion = new mcQuestion();
+            if (attributes != null && attributes.getLength() == 1) {
+                mcQuestion.setqID(Integer.parseInt(attributes.getValue(0)));
+            }
+            this.objectStack.push(mcQuestion);
+        }
+    }
+
+    public void endElement(String uri, String localName, String qName) throws SAXException {
+        this.elementStack.pop();
+        if ("question".equals(qName)) {
+            Object object = this.objectStack.pop();
+        }
+    }
 }
