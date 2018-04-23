@@ -1,6 +1,6 @@
 package salazar.cs3354.txstate.edu.datapathsimulator;
 
-public abstract class Question {
+public abstract class question {
     String question;
     int qID;
 
