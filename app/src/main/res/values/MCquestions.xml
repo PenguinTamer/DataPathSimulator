@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <question id="1">
+    <item name="q1" id="1">
         <questionText>question1</questionText>
         <answer>answer1</answer>
         <wrongChoice id="1">wrong1.1</wrongChoice>
         <wrongChoice id="2">wrong1.2</wrongChoice>
         <wrongChoice id="3">wrong1.3</wrongChoice>
-    </question>
+    </item>
+    <!--
     <question id="2">
         <questionText>question2</questionText>
         <answer>answer2</answer>
@@ -21,4 +22,5 @@
         <wrongChoice id="2">wrong3.2</wrongChoice>
         <wrongChoice id="3">wrong3.3</wrongChoice>
     </question>
+    -->
 </resources>

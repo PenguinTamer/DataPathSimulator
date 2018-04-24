@@ -8,7 +8,6 @@ import org.xml.sax.SAXException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.swing.text.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -23,7 +22,7 @@ public class mcQuestionDomParser {
         try {
             builder = factory.newDocumentBuilder();
             org.w3c.dom.Document document = builder.parse("MCquestions.xml");
-            NodeList questionList = document.getElementsByTagName("question");
+            NodeList questionList = document.getElementsByTagName("item");
 
             for (int i = 0; i < questionList.getLength(); i++) {
                 mcQuestion = new mcQuestion();
