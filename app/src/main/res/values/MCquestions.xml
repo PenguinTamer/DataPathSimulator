@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <question ID="1">
+    <question id="1">
         <questionText>question1</questionText>
         <answer>answer1</answer>
-        <wrongChoice ID="1">wrong1.1</wrongChoice>
-        <wrongChoice ID="2">wrong1.2</wrongChoice>
-        <wrongChoice ID="3">wrong1.3</wrongChoice>
+        <wrongChoice id="1">wrong1.1</wrongChoice>
+        <wrongChoice id="2">wrong1.2</wrongChoice>
+        <wrongChoice id="3">wrong1.3</wrongChoice>
     </question>
-    <question ID="2">
+    <question id="2">
         <questionText>question2</questionText>
         <answer>answer2</answer>
-        <wrongChoice ID="1">wrong2.1</wrongChoice>
-        <wrongChoice ID="2">wrong2.2</wrongChoice>
-        <wrongChoice ID="3">wrong2.3</wrongChoice>
+        <wrongChoice id="1">wrong2.1</wrongChoice>
+        <wrongChoice id="2">wrong2.2</wrongChoice>
+        <wrongChoice id="3">wrong2.3</wrongChoice>
     </question>
-    <question ID="3">
+    <question id="3">
         <questionText>question3</questionText>
         <answer>answer3</answer>
-        <wrongChoice ID="1">wrong3.1</wrongChoice>
-        <wrongChoice ID="2">wrong3.2</wrongChoice>
-        <wrongChoice ID="3">wrong3.3</wrongChoice>
+        <wrongChoice id="1">wrong3.1</wrongChoice>
+        <wrongChoice id="2">wrong3.2</wrongChoice>
+        <wrongChoice id="3">wrong3.3</wrongChoice>
     </question>
 </resources>

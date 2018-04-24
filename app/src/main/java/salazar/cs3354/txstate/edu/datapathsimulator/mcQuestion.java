@@ -4,18 +4,15 @@ import java.util.ArrayList;
 
 public class mcQuestion extends salazar.cs3354.txstate.edu.datapathsimulator.question {
     private String answer;
-    public ArrayList<String> untrueChoices;
+    public ArrayList<String> untrueChoices = new ArrayList<>();
 
     public mcQuestion() {
     }
 
-    public mcQuestion(int qID, String question, String answer, String choice1, String choice2, String choice3) {
+    public mcQuestion(int qID, String question, String answer) {
         this.setqID(qID);
         this.setQuestion(question);
         this.answer = answer;
-
-        untrueChoices = new ArrayList<>();
-
     }
 
     public String getAnswer() {
@@ -30,4 +27,7 @@ public class mcQuestion extends salazar.cs3354.txstate.edu.datapathsimulator.que
         return untrueChoices;
     }
 
+    public void setUntrueChoices(String choice) {
+        untrueChoices.add(choice);
+    }
 }
