@@ -1,5 +1,6 @@
 package salazar.cs3354.txstate.edu.datapathsimulator;
-
+/**
+ * @deprecated
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -21,7 +22,7 @@ public class mcQuestionDomParser {
     {
         try {
             builder = factory.newDocumentBuilder();
-            org.w3c.dom.Document document = builder.parse("MCquestions.xml");
+org.w3c.dom.Document document = builder.parse("mcQuestions.xml");
             NodeList questionList = document.getElementsByTagName("item");
 
             for (int i = 0; i < questionList.getLength(); i++) {
@@ -63,4 +64,4 @@ public class mcQuestionDomParser {
     public ArrayList<mcQuestion> getMcQuestion() {
         return mcQuestionArrayList;
     }
-}
+}*/

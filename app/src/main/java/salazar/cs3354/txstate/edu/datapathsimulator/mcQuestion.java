@@ -9,10 +9,13 @@ public class mcQuestion extends salazar.cs3354.txstate.edu.datapathsimulator.que
     public mcQuestion() {
     }
 
-    public mcQuestion(int qID, String question, String answer) {
+    public mcQuestion(int qID, String question, String answer, String choice1, String choice2, String choice3) {
         this.setqID(qID);
         this.setQuestion(question);
         this.answer = answer;
+        untrueChoices.add(1, choice1);
+        untrueChoices.add(2, choice2);
+        untrueChoices.add(3, choice3);
     }
 
     public String getAnswer() {
