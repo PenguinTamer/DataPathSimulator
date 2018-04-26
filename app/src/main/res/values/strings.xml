@@ -8,5 +8,5 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_test">Test</string>
     <string name="title_activity_data_path_sim">Data Path Sim</string>
-    <string name="title_activity_practice_questions">Practice Questions</string>
+    <string name="title_activity_practice_questions">Practice</string>
 </resources>
