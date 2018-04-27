@@ -3,6 +3,15 @@ package salazar.cs3354.txstate.edu.datapathsimulator;
 public abstract class question {
     String question;
     int qID;
+    int infoID;
+
+    public int getInfoID() {
+        return infoID;
+    }
+
+    public void setInfoID(int infoID) {
+        this.infoID = infoID;
+    }
 
     public String getQuestion() {
         return question;
