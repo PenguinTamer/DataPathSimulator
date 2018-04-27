@@ -37,15 +37,16 @@
         <activity
             android:name=".DataPathSim"
             android:label="@string/title_activity_data_path_sim"
-            android:parentActivityName=".PracticeQuestions">
+            android:parentActivityName=".practice">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.practice" />
         </activity>
         <activity
-            android:name=".PracticeQuestions"
-            android:label="@string/title_activity_practice_questions"
-            android:parentActivityName=".practice">
+            android:name=".instExplained"
+            android:label="@string/title_activity_inst_explained"
+            android:parentActivityName=".practice"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.practice" />

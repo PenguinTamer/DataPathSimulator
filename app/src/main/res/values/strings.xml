@@ -9,4 +9,7 @@
     <string name="title_activity_test">Test</string>
     <string name="title_activity_data_path_sim">Data Path Sim</string>
     <string name="title_activity_practice_questions">Practice</string>
+    <string name="title_activity_inst_explained">instExplained</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
