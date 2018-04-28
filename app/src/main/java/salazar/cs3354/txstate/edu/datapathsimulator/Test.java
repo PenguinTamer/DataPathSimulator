@@ -8,6 +8,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class Test extends AppCompatActivity {
     private TextView questionText;
     private RadioGroup choiceGroup;
     private RadioButton choice1, choice2, choice3, choice4;
+    private Button explainButton;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -49,9 +51,33 @@ public class Test extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        //init all handles
+        questionText = findViewById(R.id.questionText);
+        choiceGroup = findViewById(R.id.choiceGroup);
+        choice1 = findViewById(R.id.choiceButton1);
+        choice2 = findViewById(R.id.choiceButton2);
+        choice3 = findViewById(R.id.choiceButton3);
+        choice4 = findViewById(R.id.choiceButton4);
         //Initalization of questions
         mcQuestionArrayList = new ArrayList<>();
         initialize(mcQuestionArrayList);
+        updateQuestion(questionText, choice1, choice2, choice3, choice4);
+
+        choiceGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            //Checks which buttons has been pressed
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.choiceButton1) {
+
+                } else if (checkedId == R.id.choiceButton2) {
+
+                } else if (checkedId == R.id.choiceButton3) {
+
+                } else {
+
+                }
+            }
+        });
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -62,6 +88,7 @@ public class Test extends AppCompatActivity {
 
     private void initialize(ArrayList<mcQuestion> mcQuestionArrayList) {
         mcQuestion mcQuestion;
+
         mcQuestion = new mcQuestion();
         mcQuestion.setQuestion("Question1");
         mcQuestion.setAnswer("Ans1");
@@ -71,8 +98,17 @@ public class Test extends AppCompatActivity {
         mcQuestionArrayList.add(mcQuestion);
     }
 
+    private void updateQuestion(TextView questionText, RadioButton choice1, RadioButton choice2, RadioButton choice3, RadioButton choice4) {
+        questionText.setText(mcQuestionArrayList.get(questionIndex).getQuestion());
+        //WILL UPDATE TO RANDOMIZE CHOICE/ANSWER ORDER
+        choice1.setText(mcQuestionArrayList.get(questionIndex).untrueChoices.get(0));
+        choice2.setText(mcQuestionArrayList.get(questionIndex).untrueChoices.get(1));
+        choice3.setText(mcQuestionArrayList.get(questionIndex).untrueChoices.get(2));
+        choice4.setText(mcQuestionArrayList.get(questionIndex).getAnswer());
+    }
     private boolean checkAnswer(mcQuestion question, String answer) {
         if (answer == question.getAnswer()) {
+
             return true;
         } else
             return false;

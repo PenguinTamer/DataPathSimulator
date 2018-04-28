@@ -25,8 +25,4 @@ public class mcQuestion extends salazar.cs3354.txstate.edu.datapathsimulator.que
     public String getAnswer() {
         return answer;
     }
-
-    public java.util.ArrayList<String> getUntrueChoices() {
-        return untrueChoices;
-    }
 }
