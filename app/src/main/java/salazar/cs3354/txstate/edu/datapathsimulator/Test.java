@@ -108,25 +108,93 @@ public class Test extends AppCompatActivity {
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(0);
         mcQuestion.setInfoID(0);
-        mcQuestion.setAnswerIndex(0);
-        mcQuestion.setQuestion("Question1");
-        mcQuestion.choices.add("Ans1");
-        mcQuestion.choices.add("Choice1");
-        mcQuestion.choices.add("choice2");
-        mcQuestion.choices.add("choice3");
+        mcQuestion.setAnswerIndex(2);
+        mcQuestion.setQuestion("Which of the following is NOT a datapath element?");
+        mcQuestion.choices.add("ALU");
+        mcQuestion.choices.add("Multiplexer");
+        mcQuestion.choices.add("RAM");
+        mcQuestion.choices.add("Gates");
         mcQuestionArrayList.add(mcQuestion);
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(1);
         mcQuestion.setInfoID(1);
         mcQuestion.setAnswerIndex(0);
-        mcQuestion.setQuestion("Question2");
-        mcQuestion.choices.add("ans2");
-        mcQuestion.choices.add("Choice1");
-        mcQuestion.choices.add("choice2");
-        mcQuestion.choices.add("choice3");
+        mcQuestion.setQuestion("Which of the following is a state element?");
+        mcQuestion.choices.add("Registers");
+        mcQuestion.choices.add("ALU");
+        mcQuestion.choices.add("Multiplexer");
+        mcQuestion.choices.add("Gates");
+        mcQuestionArrayList.add(mcQuestion);
+
+        mcQuestion = new mcQuestion();
+        mcQuestion.setqID(2);
+        mcQuestion.setInfoID(1);
+        mcQuestion.setAnswerIndex(1);
+        mcQuestion.setQuestion("In order to execute an instruction fetch, which of the following components is NOT needed?");
+        mcQuestion.choices.add("Memory");
+        mcQuestion.choices.add("Registers");
+        mcQuestion.choices.add("PC");
+        mcQuestion.choices.add("ALU");
+        mcQuestionArrayList.add(mcQuestion);
+
+        mcQuestion = new mcQuestion();
+        mcQuestion.setqID(3);
+        mcQuestion.setInfoID(1);
+        mcQuestion.setAnswerIndex(3);
+        mcQuestion.setQuestion("The set of components that tells the datapath what to do is referred to as the ");
+        mcQuestion.choices.add("operating system");
+        mcQuestion.choices.add("brain");
+        mcQuestion.choices.add("boss");
+        mcQuestion.choices.add("control");
+        mcQuestionArrayList.add(mcQuestion);
+
+        mcQuestion = new mcQuestion();
+        mcQuestion.setqID(4);
+        mcQuestion.setInfoID(1);
+        mcQuestion.setAnswerIndex(0);
+        mcQuestion.setQuestion("The on chip memory holds up to ");
+        mcQuestion.choices.add("L1 cache");
+        mcQuestion.choices.add("L2 cache");
+        mcQuestion.choices.add("main memory");
+        mcQuestion.choices.add("disk");
+        mcQuestionArrayList.add(mcQuestion);
+
+        mcQuestion = new mcQuestion();
+        mcQuestion.setqID(5);
+        mcQuestion.setInfoID(1);
+        mcQuestion.setAnswerIndex(2);
+        mcQuestion.setQuestion("Which tasks need to be performed for EVERY instruction?");
+        mcQuestion.choices.add("Fetch");
+        mcQuestion.choices.add("Decode");
+        mcQuestion.choices.add("Both fetch & decode");
+        mcQuestion.choices.add("None of the above");
+        mcQuestionArrayList.add(mcQuestion);
+
+        mcQuestion = new mcQuestion();
+        mcQuestion.setqID(6);
+        mcQuestion.setInfoID(1);
+        mcQuestion.setAnswerIndex(3);
+        mcQuestion.setQuestion("At any given cycle, control must ");
+        mcQuestion.choices.add("tell each MUX which operand to select");
+        mcQuestion.choices.add("tell ALU which operation to perform");
+        mcQuestion.choices.add("let registers & memory know if we are doing a read or write");
+        mcQuestion.choices.add("all of the above");
+        mcQuestionArrayList.add(mcQuestion);
+
+        mcQuestion = new mcQuestion();
+        mcQuestion.setqID(7);
+        mcQuestion.setInfoID(1);
+        mcQuestion.setAnswerIndex(1);
+        mcQuestion.setQuestion("Which of the following is true regarding on chip memory?");
+        mcQuestion.choices.add("Faster than registers & main memory");
+        mcQuestion.choices.add("Larger than registers, but smaller than memory");
+        mcQuestion.choices.add("Slower than main memory, but faster than registers");
+        mcQuestion.choices.add("Smaller than registers & main memory");
         mcQuestionArrayList.add(mcQuestion);
     }
+
+
 
     private void updateQuestion() {
         questionText.setText(mcQuestionArrayList.get(questionIndex).getQuestion());
