@@ -8,6 +8,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,11 +16,15 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Test extends AppCompatActivity {
-    private TextView mTextMessage;
     private ArrayList<mcQuestion> mcQuestionArrayList;
     private int questionIndex = 0;
-
     mcQuestion question = new mcQuestion();
+    //Handles
+    private TextView questionText;
+    private RadioGroup choiceGroup;
+    private RadioButton choice1, choice2, choice3, choice4;
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -44,13 +49,15 @@ public class Test extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        //Initalization of questions
         mcQuestionArrayList = new ArrayList<>();
         initialize(mcQuestionArrayList);
 
-
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        questionText = (TextView) findViewById(R.id.questionText);
+
     }
 
     private void initialize(ArrayList<mcQuestion> mcQuestionArrayList) {
