@@ -26,7 +26,6 @@ public class Test extends AppCompatActivity {
     private RadioButton choice1, choice2, choice3, choice4;
     private Button explainButton, submitButton;
 
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -66,21 +65,6 @@ public class Test extends AppCompatActivity {
         initialize(mcQuestionArrayList);
         updateQuestion();
 
-        /*choiceGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            //Checks which buttons has been pressed
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.choiceButton1) {
-                    checkAnswer(mcQuestionArrayList.get(questionIndex), 0);
-                } else if (checkedId == R.id.choiceButton2) {
-                    checkAnswer(mcQuestionArrayList.get(questionIndex), 1);
-                } else if (checkedId == R.id.choiceButton3) {
-                    checkAnswer(mcQuestionArrayList.get(questionIndex), 2);
-                } else {
-                    checkAnswer(mcQuestionArrayList.get(questionIndex), 3);
-                }
-            }
-        });*/
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,8 +178,6 @@ public class Test extends AppCompatActivity {
         mcQuestionArrayList.add(mcQuestion);
     }
 
-
-
     private void updateQuestion() {
         questionText.setText(mcQuestionArrayList.get(questionIndex).getQuestion());
         choice1.setText(mcQuestionArrayList.get(questionIndex).choices.get(0));
@@ -208,11 +190,11 @@ public class Test extends AppCompatActivity {
         if (givenAnswerIndex == question.getAnswerIndex()) {
             questionsRight++;
             questionIndex = (questionIndex + 1) % mcQuestionArrayList.size();
-            Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT);
+            Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
             updateQuestion();
-
         } else {
-            Toast.makeText(getApplicationContext(), "Wrong, try again!", Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(), "Wrong, please move on", Toast.LENGTH_LONG).show();
+            updateQuestion();
         }
     }
 }
