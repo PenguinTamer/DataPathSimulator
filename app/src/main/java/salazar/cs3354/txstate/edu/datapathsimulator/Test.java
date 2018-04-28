@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -23,7 +24,7 @@ public class Test extends AppCompatActivity {
     private TextView questionText;
     private RadioGroup choiceGroup;
     private RadioButton choice1, choice2, choice3, choice4;
-    private Button explainButton;
+    private Button explainButton, submitButton;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -53,36 +54,52 @@ public class Test extends AppCompatActivity {
         //init all handles
         questionText = findViewById(R.id.questionText);
         choiceGroup = findViewById(R.id.choiceGroup);
+        submitButton = findViewById(R.id.submitButton);
+        explainButton = findViewById(R.id.explainButton);
         choice1 = findViewById(R.id.choiceButton1);
         choice2 = findViewById(R.id.choiceButton2);
         choice3 = findViewById(R.id.choiceButton3);
         choice4 = findViewById(R.id.choiceButton4);
+
         //Initalization of questions
         mcQuestionArrayList = new ArrayList<>();
         initialize(mcQuestionArrayList);
         updateQuestion();
 
-        choiceGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        /*choiceGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             //Checks which buttons has been pressed
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.choiceButton1) {
-
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 0);
                 } else if (checkedId == R.id.choiceButton2) {
-
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 1);
                 } else if (checkedId == R.id.choiceButton3) {
-
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 2);
                 } else {
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 3);
+                }
+            }
+        });*/
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int selectedButtonId = choiceGroup.getCheckedRadioButtonId();
 
+                if (selectedButtonId == choice1.getId()) {
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 0);
+                } else if (selectedButtonId == choice2.getId()) {
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 1);
+                } else if (selectedButtonId == choice3.getId()) {
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 2);
+                } else {
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 3);
                 }
             }
         });
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        questionText = (TextView) findViewById(R.id.questionText);
-
     }
 
     private void initialize(ArrayList<mcQuestion> mcQuestionArrayList) {
