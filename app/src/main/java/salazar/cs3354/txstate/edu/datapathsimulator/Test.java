@@ -1,11 +1,9 @@
 package salazar.cs3354.txstate.edu.datapathsimulator;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -19,6 +17,7 @@ import java.util.ArrayList;
 public class Test extends AppCompatActivity {
     private ArrayList<mcQuestion> mcQuestionArrayList;
     private int questionIndex = 0;
+    private int questionsRight = 0;
     mcQuestion question = new mcQuestion();
     //Handles
     private TextView questionText;
@@ -61,7 +60,7 @@ public class Test extends AppCompatActivity {
         //Initalization of questions
         mcQuestionArrayList = new ArrayList<>();
         initialize(mcQuestionArrayList);
-        updateQuestion(questionText, choice1, choice2, choice3, choice4);
+        updateQuestion();
 
         choiceGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             //Checks which buttons has been pressed
@@ -90,27 +89,45 @@ public class Test extends AppCompatActivity {
         mcQuestion mcQuestion;
 
         mcQuestion = new mcQuestion();
+        mcQuestion.setqID(0);
+        mcQuestion.setInfoID(0);
+        mcQuestion.setAnswerIndex(0);
         mcQuestion.setQuestion("Question1");
-        mcQuestion.setAnswer("Ans1");
-        mcQuestion.untrueChoices.add("Choice1");
-        mcQuestion.untrueChoices.add("choice2");
-        mcQuestion.untrueChoices.add("choice3");
+        mcQuestion.choices.add("Ans1");
+        mcQuestion.choices.add("Choice1");
+        mcQuestion.choices.add("choice2");
+        mcQuestion.choices.add("choice3");
+        mcQuestionArrayList.add(mcQuestion);
+
+        mcQuestion = new mcQuestion();
+        mcQuestion.setqID(1);
+        mcQuestion.setInfoID(1);
+        mcQuestion.setAnswerIndex(0);
+        mcQuestion.setQuestion("Question2");
+        mcQuestion.choices.add("ans2");
+        mcQuestion.choices.add("Choice1");
+        mcQuestion.choices.add("choice2");
+        mcQuestion.choices.add("choice3");
         mcQuestionArrayList.add(mcQuestion);
     }
 
-    private void updateQuestion(TextView questionText, RadioButton choice1, RadioButton choice2, RadioButton choice3, RadioButton choice4) {
+    private void updateQuestion() {
         questionText.setText(mcQuestionArrayList.get(questionIndex).getQuestion());
-        //WILL UPDATE TO RANDOMIZE CHOICE/ANSWER ORDER
-        choice1.setText(mcQuestionArrayList.get(questionIndex).untrueChoices.get(0));
-        choice2.setText(mcQuestionArrayList.get(questionIndex).untrueChoices.get(1));
-        choice3.setText(mcQuestionArrayList.get(questionIndex).untrueChoices.get(2));
-        choice4.setText(mcQuestionArrayList.get(questionIndex).getAnswer());
+        choice1.setText(mcQuestionArrayList.get(questionIndex).choices.get(0));
+        choice2.setText(mcQuestionArrayList.get(questionIndex).choices.get(1));
+        choice3.setText(mcQuestionArrayList.get(questionIndex).choices.get(2));
+        choice4.setText(mcQuestionArrayList.get(questionIndex).choices.get(3));
     }
-    private boolean checkAnswer(mcQuestion question, String answer) {
-        if (answer == question.getAnswer()) {
 
-            return true;
-        } else
-            return false;
+    private void checkAnswer(mcQuestion question, int givenAnswerIndex) {
+        if (givenAnswerIndex == question.getAnswerIndex()) {
+            questionsRight++;
+            questionIndex = (questionIndex + 1) % mcQuestionArrayList.size();
+            Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT);
+            updateQuestion();
+
+        } else {
+            Toast.makeText(getApplicationContext(), "Wrong, try again!", Toast.LENGTH_LONG);
+        }
     }
 }
