@@ -1,9 +1,9 @@
 package salazar.cs3354.txstate.edu.datapathsimulator;
 
 public abstract class question {
-    String question;
-    int qID;
-    int infoID;
+    private String question;
+    private int qID;
+    private int infoID;
 
     public int getInfoID() {
         return infoID;

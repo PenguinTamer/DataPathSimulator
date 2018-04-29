@@ -119,6 +119,7 @@ public class Test extends AppCompatActivity {
                         break;
                     default:
                         changeActivity = new Intent(Test.this, practice.class);
+                        break;
                 }
                 startActivity(changeActivity);
             }

@@ -44,17 +44,8 @@
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.practice" />
         </activity>
         <activity
-            android:name=".instExplained"
-            android:label="@string/title_activity_inst_explained"
-            android:parentActivityName=".practice"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="salazar.cs3354.txstate.edu.datapathsimulator.practice" />
-        </activity>
-        <activity
             android:name=".answer1"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_answer1"
             android:parentActivityName=".Test">
             <meta-data

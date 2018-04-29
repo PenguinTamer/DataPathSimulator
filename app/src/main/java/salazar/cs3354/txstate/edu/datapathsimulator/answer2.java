@@ -11,5 +11,4 @@ public class answer2 extends Activity {
         setContentView(R.layout.activity_answer2);
         getActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
 }

@@ -21,18 +21,13 @@ public class practice extends AppCompatActivity {
             Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    //mTextMessage.setText(R.string.title_home);
                     intent = new Intent(practice.this, MainActivity.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_test:
-                    //mTextMessage.setText(R.string.title_test);
                     intent = new Intent(practice.this, Test.class);
                     startActivity(intent);
                     return true;
-                case R.id.navigation_practice:
-                    intent = new Intent(practice.this, instExplained.class);
-                    startActivity(intent);
             }
             return false;
         }
