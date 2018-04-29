@@ -14,4 +14,9 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_answer1">answer1</string>
     <string name="title_activity_answer2">answer2</string>
+    <string name="title_activity_answer3">answer3</string>
+    <string name="title_activity_answer4">answer4</string>
+    <string name="title_activity_answer5">answer5</string>
+    <string name="title_activity_answer6">answer6</string>
+    <string name="title_activity_answer7">answer7</string>
 </resources>
