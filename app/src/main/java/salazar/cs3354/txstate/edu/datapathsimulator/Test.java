@@ -16,12 +16,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Test extends AppCompatActivity {
+    final int MAX_QUESTIONS = 10;
+    //Variables
     private ArrayList<mcQuestion> mcQuestionArrayList;
     private int questionIndex = 0;
     private int questionsRight = 0;
+    private int score = 0;
     mcQuestion question = new mcQuestion();
     //Handles
     private TextView questionText;
+    private TextView scoreText;
     private RadioGroup choiceGroup;
     private RadioButton choice1, choice2, choice3, choice4;
     private Button explainButton, submitButton;
@@ -52,6 +56,7 @@ public class Test extends AppCompatActivity {
         setContentView(R.layout.activity_test);
         //init all handles
         questionText = findViewById(R.id.questionText);
+        scoreText = findViewById(R.id.score);
         choiceGroup = findViewById(R.id.choiceGroup);
         submitButton = findViewById(R.id.submitButton);
         explainButton = findViewById(R.id.explainButton);
@@ -187,14 +192,23 @@ public class Test extends AppCompatActivity {
     }
 
     private void checkAnswer(mcQuestion question, int givenAnswerIndex) {
-        if (givenAnswerIndex == question.getAnswerIndex()) {
+        if (questionIndex >= MAX_QUESTIONS) {
+            scoreText.setText(getScore());
+            Toast.makeText(getApplicationContext(), "All done!", Toast.LENGTH_LONG).show();
+        } else if (givenAnswerIndex == question.getAnswerIndex()) {
             questionsRight++;
-            questionIndex = (questionIndex + 1) % mcQuestionArrayList.size();
+            questionIndex++;
             Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
             updateQuestion();
         } else {
+            questionIndex++;
             Toast.makeText(getApplicationContext(), "Wrong, please move on", Toast.LENGTH_LONG).show();
             updateQuestion();
         }
+    }
+
+    private String getScore() {
+        score = (int) (questionsRight * 100.0f) / mcQuestionArrayList.size();
+        return Integer.toString(score);
     }
 }
