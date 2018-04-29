@@ -73,10 +73,11 @@ public class Test extends AppCompatActivity {
             public void onClick(View v) {
                 int selectedButtonId = choiceGroup.getCheckedRadioButtonId();
 
-                if (questionIndex >= mcQuestionArrayList.size()) {
+                if (questionIndex == mcQuestionArrayList.size() - 1) {
                     showScore();
                 } else {
                     if (selectedButtonId == choice1.getId()) {
+                        checkAnswer(mcQuestionArrayList.get(questionIndex), 0);
                     } else if (selectedButtonId == choice2.getId()) {
                         checkAnswer(mcQuestionArrayList.get(questionIndex), 1);
                     } else if (selectedButtonId == choice3.getId()) {
@@ -85,6 +86,41 @@ public class Test extends AppCompatActivity {
                         checkAnswer(mcQuestionArrayList.get(questionIndex), 3);
                     }
                 }
+            }
+        });
+
+        explainButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent changeActivity;
+
+                switch (mcQuestionArrayList.get(questionIndex).getInfoID()) {
+                    case 1:
+                        changeActivity = new Intent(Test.this, answer1.class);
+                        break;
+                    case 2:
+                        changeActivity = new Intent(Test.this, answer2.class);
+                        break;
+                    case 3:
+                        changeActivity = new Intent(Test.this, answer3.class);
+                        break;
+                    case 4:
+                        changeActivity = new Intent(Test.this, answer4.class);
+                        break;
+                    case 5:
+                    case 8:
+                        changeActivity = new Intent(Test.this, answer58.class);
+                        break;
+                    case 6:
+                        changeActivity = new Intent(Test.this, answer6.class);
+                        break;
+                    case 7:
+                        changeActivity = new Intent(Test.this, answer7.class);
+                        break;
+                    default:
+                        changeActivity = new Intent(Test.this, practice.class);
+                }
+                startActivity(changeActivity);
             }
         });
 
@@ -97,7 +133,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(0);
-        mcQuestion.setInfoID(0);
+        mcQuestion.setInfoID(1);
         mcQuestion.setAnswerIndex(2);
         mcQuestion.setQuestion("Which of the following is NOT a datapath element?");
         mcQuestion.choices.add("ALU");
@@ -108,7 +144,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(1);
-        mcQuestion.setInfoID(1);
+        mcQuestion.setInfoID(2);
         mcQuestion.setAnswerIndex(0);
         mcQuestion.setQuestion("Which of the following is a state element?");
         mcQuestion.choices.add("Registers");
@@ -119,7 +155,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(2);
-        mcQuestion.setInfoID(1);
+        mcQuestion.setInfoID(2);
         mcQuestion.setAnswerIndex(1);
         mcQuestion.setQuestion("In order to execute an instruction fetch, which of the following components is NOT needed?");
         mcQuestion.choices.add("Memory");
@@ -130,7 +166,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(3);
-        mcQuestion.setInfoID(1);
+        mcQuestion.setInfoID(2);
         mcQuestion.setAnswerIndex(3);
         mcQuestion.setQuestion("The set of components that tells the datapath what to do is referred to as the ");
         mcQuestion.choices.add("operating system");
@@ -141,7 +177,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(4);
-        mcQuestion.setInfoID(1);
+        mcQuestion.setInfoID(2);
         mcQuestion.setAnswerIndex(0);
         mcQuestion.setQuestion("The on chip memory holds up to ");
         mcQuestion.choices.add("L1 cache");
@@ -152,7 +188,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(5);
-        mcQuestion.setInfoID(1);
+        mcQuestion.setInfoID(2);
         mcQuestion.setAnswerIndex(2);
         mcQuestion.setQuestion("Which tasks need to be performed for EVERY instruction?");
         mcQuestion.choices.add("Fetch");
@@ -163,7 +199,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(6);
-        mcQuestion.setInfoID(1);
+        mcQuestion.setInfoID(2);
         mcQuestion.setAnswerIndex(3);
         mcQuestion.setQuestion("At any given cycle, control must ");
         mcQuestion.choices.add("tell each MUX which operand to select");
@@ -174,7 +210,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(7);
-        mcQuestion.setInfoID(1);
+        mcQuestion.setInfoID(2);
         mcQuestion.setAnswerIndex(1);
         mcQuestion.setQuestion("Which of the following is true regarding on chip memory?");
         mcQuestion.choices.add("Faster than registers & main memory");
@@ -185,6 +221,7 @@ public class Test extends AppCompatActivity {
     }
 
     private void updateQuestion() {
+        questionIndex++;
         questionText.setText(mcQuestionArrayList.get(questionIndex).getQuestion());
         choice1.setText(mcQuestionArrayList.get(questionIndex).choices.get(0));
         choice2.setText(mcQuestionArrayList.get(questionIndex).choices.get(1));
@@ -192,24 +229,24 @@ public class Test extends AppCompatActivity {
         choice4.setText(mcQuestionArrayList.get(questionIndex).choices.get(3));
     }
 
-    private boolean checkAnswer(mcQuestion question, int givenAnswerIndex) {
+    private void checkAnswer(mcQuestion question, int givenAnswerIndex) {
         if (givenAnswerIndex == question.getAnswerIndex()) {
             questionsRight++;
             Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
             updateQuestion();
-            return true;
         } else {
             Toast.makeText(getApplicationContext(), "Wrong, please move on", Toast.LENGTH_LONG).show();
             updateQuestion();
-            return false;
         }
     }
 
     private void showScore() {
-        score = (int) (questionsRight * 100.0f) / mcQuestionArrayList.size();
+        score = (int) (questionsRight * 100) / mcQuestionArrayList.size();
 
         scoreText.setVisibility(View.VISIBLE);
-        scoreText.setText(Integer.toString(score));
+        scoreText.setText("Your Score is : " + Integer.toString(score) + "%");
+        questionText.setText("Good Job!");
+
         choiceGroup.setVisibility(View.GONE);
         submitButton.setVisibility(View.GONE);
         explainButton.setVisibility(View.GONE);

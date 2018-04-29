@@ -16,19 +16,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score"
+        app:layout_constraintTop_toBottomOf="@+id/questionText"
         app:menu="@menu/navigation" />
 
     <TextView
         android:id="@+id/questionText"
         android:layout_width="0dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="148dp"
-        android:text="Click to begin"
+        android:layout_height="0dp"
+        android:layout_marginBottom="263dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="124dp"
+        android:text="Question Text"
+        android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/choiceGroup"
-        app:layout_constraintEnd_toEndOf="@+id/choiceGroup"
-        app:layout_constraintStart_toStartOf="@+id/choiceGroup"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
@@ -47,25 +51,29 @@
             android:id="@+id/choiceButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="choice1" />
 
         <RadioButton
             android:id="@+id/choiceButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="choice2" />
 
         <RadioButton
             android:id="@+id/choiceButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="choice3" />
 
         <RadioButton
             android:id="@+id/choiceButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="choice4" />
     </RadioGroup>
 
     <Button
@@ -90,11 +98,14 @@
 
     <TextView
         android:id="@+id/score"
-        android:layout_width="145dp"
-        android:layout_height="0dp"
+        android:layout_width="345dp"
+        android:layout_height="53dp"
         android:layout_marginBottom="353dp"
         android:layout_marginTop="51dp"
+        android:text="Score"
+        android:textAlignment="center"
         android:textSize="24sp"
+        android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
