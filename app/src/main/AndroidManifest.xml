@@ -55,6 +55,7 @@
         <activity
             android:name=".answer2"
             android:label="@string/title_activity_answer2"
+            android:screenOrientation="landscape"
             android:parentActivityName=".Test">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -63,6 +64,7 @@
         <activity
             android:name=".answer3"
             android:label="@string/title_activity_answer3"
+            android:screenOrientation="landscape"
             android:parentActivityName=".Test">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -71,6 +73,7 @@
         <activity
             android:name=".answer4"
             android:label="@string/title_activity_answer4"
+            android:screenOrientation="landscape"
             android:parentActivityName=".Test">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -79,6 +82,7 @@
         <activity
             android:name=".answer58"
             android:label="@string/title_activity_answer5"
+            android:screenOrientation="landscape"
             android:parentActivityName=".Test">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -87,6 +91,7 @@
         <activity
             android:name=".answer6"
             android:label="@string/title_activity_answer6"
+            android:screenOrientation="landscape"
             android:parentActivityName=".Test">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -95,6 +100,7 @@
         <activity
             android:name=".answer7"
             android:label="@string/title_activity_answer7"
+            android:screenOrientation="landscape"
             android:parentActivityName=".Test">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
