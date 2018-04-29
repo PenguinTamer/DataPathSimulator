@@ -16,13 +16,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Test extends AppCompatActivity {
-    final int MAX_QUESTIONS = 10;
     //Variables
     private ArrayList<mcQuestion> mcQuestionArrayList;
     private int questionIndex = 0;
     private int questionsRight = 0;
     private int score = 0;
-    mcQuestion question = new mcQuestion();
     //Handles
     private TextView questionText;
     private TextView scoreText;
@@ -65,7 +63,7 @@ public class Test extends AppCompatActivity {
         choice3 = findViewById(R.id.choiceButton3);
         choice4 = findViewById(R.id.choiceButton4);
 
-        //Initalization of questions
+        //Initialization of questions
         mcQuestionArrayList = new ArrayList<>();
         initialize(mcQuestionArrayList);
         updateQuestion();
@@ -75,14 +73,17 @@ public class Test extends AppCompatActivity {
             public void onClick(View v) {
                 int selectedButtonId = choiceGroup.getCheckedRadioButtonId();
 
-                if (selectedButtonId == choice1.getId()) {
-                    checkAnswer(mcQuestionArrayList.get(questionIndex), 0);
-                } else if (selectedButtonId == choice2.getId()) {
-                    checkAnswer(mcQuestionArrayList.get(questionIndex), 1);
-                } else if (selectedButtonId == choice3.getId()) {
-                    checkAnswer(mcQuestionArrayList.get(questionIndex), 2);
+                if (questionIndex >= mcQuestionArrayList.size()) {
+                    showScore();
                 } else {
-                    checkAnswer(mcQuestionArrayList.get(questionIndex), 3);
+                    if (selectedButtonId == choice1.getId()) {
+                    } else if (selectedButtonId == choice2.getId()) {
+                        checkAnswer(mcQuestionArrayList.get(questionIndex), 1);
+                    } else if (selectedButtonId == choice3.getId()) {
+                        checkAnswer(mcQuestionArrayList.get(questionIndex), 2);
+                    } else if (selectedButtonId == choice4.getId()) {
+                        checkAnswer(mcQuestionArrayList.get(questionIndex), 3);
+                    }
                 }
             }
         });
@@ -191,24 +192,27 @@ public class Test extends AppCompatActivity {
         choice4.setText(mcQuestionArrayList.get(questionIndex).choices.get(3));
     }
 
-    private void checkAnswer(mcQuestion question, int givenAnswerIndex) {
-        if (questionIndex >= MAX_QUESTIONS) {
-            scoreText.setText(getScore());
-            Toast.makeText(getApplicationContext(), "All done!", Toast.LENGTH_LONG).show();
-        } else if (givenAnswerIndex == question.getAnswerIndex()) {
+    private boolean checkAnswer(mcQuestion question, int givenAnswerIndex) {
+        if (givenAnswerIndex == question.getAnswerIndex()) {
             questionsRight++;
-            questionIndex++;
             Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
             updateQuestion();
+            return true;
         } else {
-            questionIndex++;
             Toast.makeText(getApplicationContext(), "Wrong, please move on", Toast.LENGTH_LONG).show();
             updateQuestion();
+            return false;
         }
     }
 
-    private String getScore() {
+    private void showScore() {
         score = (int) (questionsRight * 100.0f) / mcQuestionArrayList.size();
-        return Integer.toString(score);
+
+        scoreText.setVisibility(View.VISIBLE);
+        scoreText.setText(Integer.toString(score));
+        choiceGroup.setVisibility(View.GONE);
+        submitButton.setVisibility(View.GONE);
+        explainButton.setVisibility(View.GONE);
     }
+
 }
