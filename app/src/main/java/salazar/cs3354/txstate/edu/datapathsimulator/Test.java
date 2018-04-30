@@ -222,12 +222,12 @@ public class Test extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-        questionIndex++;
         questionText.setText(mcQuestionArrayList.get(questionIndex).getQuestion());
         choice1.setText(mcQuestionArrayList.get(questionIndex).choices.get(0));
         choice2.setText(mcQuestionArrayList.get(questionIndex).choices.get(1));
         choice3.setText(mcQuestionArrayList.get(questionIndex).choices.get(2));
         choice4.setText(mcQuestionArrayList.get(questionIndex).choices.get(3));
+        questionIndex++;
     }
 
     private void checkAnswer(mcQuestion question, int givenAnswerIndex) {
