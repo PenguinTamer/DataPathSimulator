@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PDAr</string>
+    <string name="app_name">PDA</string>
     <string name="title_home">Home</string>
     <string name="title_test">Test</string>
     <string name="title_practice">Practice</string>
@@ -18,4 +18,5 @@
     <string name="title_activity_answer5">Cheat Sheet</string>
     <string name="title_activity_answer6">Cheat Sheet</string>
     <string name="title_activity_answer7">Cheat Sheet</string>
+    <string name="intro">Use the "Practice" section to study the material and the "Test" section to test you knowledge! \n\nNavigate back to the home page at any time using the navigation bar below.</string>
 </resources>
