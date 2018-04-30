@@ -20,7 +20,6 @@ public class Test extends AppCompatActivity {
     private ArrayList<mcQuestion> mcQuestionArrayList;
     private int questionIndex = 0;
     private int questionsRight = 0;
-    private int score = 0;
     //Handles
     private TextView questionText;
     private TextView scoreText;
@@ -73,18 +72,21 @@ public class Test extends AppCompatActivity {
             public void onClick(View v) {
                 int selectedButtonId = choiceGroup.getCheckedRadioButtonId();
 
+                if (selectedButtonId == choice1.getId()) {
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 0);
+                } else if (selectedButtonId == choice2.getId()) {
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 1);
+                } else if (selectedButtonId == choice3.getId()) {
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 2);
+                } else if (selectedButtonId == choice4.getId()) {
+                    checkAnswer(mcQuestionArrayList.get(questionIndex), 3);
+                }
+
                 if (questionIndex == mcQuestionArrayList.size() - 1) {
                     showScore();
                 } else {
-                    if (selectedButtonId == choice1.getId()) {
-                        checkAnswer(mcQuestionArrayList.get(questionIndex), 0);
-                    } else if (selectedButtonId == choice2.getId()) {
-                        checkAnswer(mcQuestionArrayList.get(questionIndex), 1);
-                    } else if (selectedButtonId == choice3.getId()) {
-                        checkAnswer(mcQuestionArrayList.get(questionIndex), 2);
-                    } else if (selectedButtonId == choice4.getId()) {
-                        checkAnswer(mcQuestionArrayList.get(questionIndex), 3);
-                    }
+                    questionIndex++;
+                    updateQuestion();
                 }
             }
         });
@@ -219,17 +221,6 @@ public class Test extends AppCompatActivity {
         mcQuestion.choices.add("Slower than main memory, but faster than registers");
         mcQuestion.choices.add("Smaller than registers & main memory");
         mcQuestionArrayList.add(mcQuestion);
-
-        /*mcQuestion = new mcQuestion();
-        mcQuestion.setqID(8);
-        mcQuestion.setInfoID(7);
-        mcQuestion.setAnswerIndex(0);
-        mcQuestion.choices.add("");
-        mcQuestion.choices.add("");
-        mcQuestion.choices.add("");
-        mcQuestion.choices.add("");
-        mcQuestionArrayList.add(mcQuestion);*/
-
     }
 
     private void updateQuestion() {
@@ -238,25 +229,18 @@ public class Test extends AppCompatActivity {
         choice2.setText(mcQuestionArrayList.get(questionIndex).choices.get(1));
         choice3.setText(mcQuestionArrayList.get(questionIndex).choices.get(2));
         choice4.setText(mcQuestionArrayList.get(questionIndex).choices.get(3));
-        //questionIndex++;
     }
 
     private void checkAnswer(mcQuestion question, int givenAnswerIndex) {
         if (givenAnswerIndex == question.getAnswerIndex()) {
             questionsRight++;
             Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
-            questionIndex++;
-            updateQuestion();
         } else {
             Toast.makeText(getApplicationContext(), "Wrong, please move on", Toast.LENGTH_LONG).show();
-            questionIndex++;
-            updateQuestion();
         }
     }
 
     private void showScore() {
-        score = (int) (questionsRight * 100) / mcQuestionArrayList.size() - 1;
-
         scoreText.setVisibility(View.VISIBLE);
         scoreText.setText("Your Score is : " + questionsRight + " out of " + mcQuestionArrayList.size());
         questionText.setText("Good Job!");
