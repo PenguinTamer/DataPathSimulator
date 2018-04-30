@@ -219,6 +219,17 @@ public class Test extends AppCompatActivity {
         mcQuestion.choices.add("Slower than main memory, but faster than registers");
         mcQuestion.choices.add("Smaller than registers & main memory");
         mcQuestionArrayList.add(mcQuestion);
+
+        /*mcQuestion = new mcQuestion();
+        mcQuestion.setqID(8);
+        mcQuestion.setInfoID(7);
+        mcQuestion.setAnswerIndex(0);
+        mcQuestion.choices.add("");
+        mcQuestion.choices.add("");
+        mcQuestion.choices.add("");
+        mcQuestion.choices.add("");
+        mcQuestionArrayList.add(mcQuestion);*/
+
     }
 
     private void updateQuestion() {
@@ -244,10 +255,10 @@ public class Test extends AppCompatActivity {
     }
 
     private void showScore() {
-        score = (int) (questionsRight * 100) / mcQuestionArrayList.size();
+        score = (int) (questionsRight * 100) / mcQuestionArrayList.size() - 1;
 
         scoreText.setVisibility(View.VISIBLE);
-        scoreText.setText("Your Score is : " + Integer.toString(score) + "%");
+        scoreText.setText("Your Score is : " + questionsRight + " out of " + mcQuestionArrayList.size());
         questionText.setText("Good Job!");
 
         choiceGroup.setVisibility(View.GONE);

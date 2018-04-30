@@ -20,15 +20,12 @@ public class MainActivity extends AppCompatActivity {
             Intent changeActivity;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    //mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_practice:
-                    //mTextMessage.setText(R.string.title_activity_practice);
                     changeActivity = new Intent(MainActivity.this, practice.class);
                     startActivity(changeActivity);
                     return true;
                 case R.id.navigation_test:
-                    mTextMessage.setText(R.string.title_test);
                     changeActivity = new Intent(MainActivity.this, Test.class);
                     startActivity(changeActivity);
                     return true;
