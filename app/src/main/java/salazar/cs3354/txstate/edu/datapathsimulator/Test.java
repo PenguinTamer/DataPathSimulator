@@ -95,26 +95,26 @@ public class Test extends AppCompatActivity {
                 Intent changeActivity;
 
                 switch (mcQuestionArrayList.get(questionIndex).getInfoID()) {
-                    case 1:
+                    case 0:
                         changeActivity = new Intent(Test.this, answer1.class);
                         break;
-                    case 2:
+                    case 1:
                         changeActivity = new Intent(Test.this, answer2.class);
                         break;
-                    case 3:
+                    case 2:
                         changeActivity = new Intent(Test.this, answer3.class);
                         break;
-                    case 4:
+                    case 3:
                         changeActivity = new Intent(Test.this, answer4.class);
                         break;
-                    case 5:
-                    case 8:
+                    case 4:
+                    case 7:
                         changeActivity = new Intent(Test.this, answer58.class);
                         break;
-                    case 6:
+                    case 5:
                         changeActivity = new Intent(Test.this, answer6.class);
                         break;
-                    case 7:
+                    case 6:
                         changeActivity = new Intent(Test.this, answer7.class);
                         break;
                     default:
@@ -134,7 +134,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(0);
-        mcQuestion.setInfoID(1);
+        mcQuestion.setInfoID(0);
         mcQuestion.setAnswerIndex(2);
         mcQuestion.setQuestion("Which of the following is NOT a datapath element?");
         mcQuestion.choices.add("ALU");
@@ -145,7 +145,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(1);
-        mcQuestion.setInfoID(2);
+        mcQuestion.setInfoID(1);
         mcQuestion.setAnswerIndex(0);
         mcQuestion.setQuestion("Which of the following is a state element?");
         mcQuestion.choices.add("Registers");
@@ -167,7 +167,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(3);
-        mcQuestion.setInfoID(2);
+        mcQuestion.setInfoID(3);
         mcQuestion.setAnswerIndex(3);
         mcQuestion.setQuestion("The set of components that tells the datapath what to do is referred to as the ");
         mcQuestion.choices.add("operating system");
@@ -178,7 +178,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(4);
-        mcQuestion.setInfoID(2);
+        mcQuestion.setInfoID(4);
         mcQuestion.setAnswerIndex(0);
         mcQuestion.setQuestion("The on chip memory holds up to ");
         mcQuestion.choices.add("L1 cache");
@@ -189,7 +189,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(5);
-        mcQuestion.setInfoID(2);
+        mcQuestion.setInfoID(5);
         mcQuestion.setAnswerIndex(2);
         mcQuestion.setQuestion("Which tasks need to be performed for EVERY instruction?");
         mcQuestion.choices.add("Fetch");
@@ -200,7 +200,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(6);
-        mcQuestion.setInfoID(2);
+        mcQuestion.setInfoID(6);
         mcQuestion.setAnswerIndex(3);
         mcQuestion.setQuestion("At any given cycle, control must ");
         mcQuestion.choices.add("tell each MUX which operand to select");
@@ -211,7 +211,7 @@ public class Test extends AppCompatActivity {
 
         mcQuestion = new mcQuestion();
         mcQuestion.setqID(7);
-        mcQuestion.setInfoID(2);
+        mcQuestion.setInfoID(7);
         mcQuestion.setAnswerIndex(1);
         mcQuestion.setQuestion("Which of the following is true regarding on chip memory?");
         mcQuestion.choices.add("Faster than registers & main memory");
@@ -227,16 +227,18 @@ public class Test extends AppCompatActivity {
         choice2.setText(mcQuestionArrayList.get(questionIndex).choices.get(1));
         choice3.setText(mcQuestionArrayList.get(questionIndex).choices.get(2));
         choice4.setText(mcQuestionArrayList.get(questionIndex).choices.get(3));
-        questionIndex++;
+        //questionIndex++;
     }
 
     private void checkAnswer(mcQuestion question, int givenAnswerIndex) {
         if (givenAnswerIndex == question.getAnswerIndex()) {
             questionsRight++;
             Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT).show();
+            questionIndex++;
             updateQuestion();
         } else {
             Toast.makeText(getApplicationContext(), "Wrong, please move on", Toast.LENGTH_LONG).show();
+            questionIndex++;
             updateQuestion();
         }
     }
