@@ -26,11 +26,12 @@ public class Test extends AppCompatActivity {
      * @param questionText is the handle for the primary textbox which displays the question to be answered
      * @param scoreText is the handle for the textbox that displays the user's score
      * @param choiceGroup is the handle for the radio button group containing the 4 answer choices
-     * @param choice1 handle for radio button that contains answer choice 1
-     * @param choice2 handle for radio button that contains answer choice 2
-     * @param choice3 handle for radio button that contains answer choice 3
-     * @param choice4 handle for radio button that contains answer choice 4
-     * @param
+     * @param choice1 is a handle for radio button that contains answer choice 1
+     * @param choice2 is a handle for radio button that contains answer choice 2
+     * @param choice3  is a handle for radio button that contains answer choice 3
+     * @param choice4 is a handle for radio button that contains answer choice 4
+     * @param explainButton is a handle for the button which lets you view the answer activities
+     * @param submitButton is a handle for the submit button that must be pressed to commit a question answer
      */
     //Variables
     private ArrayList<mcQuestion> mcQuestionArrayList;
@@ -147,6 +148,10 @@ public class Test extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    /**
+     * Method loads questions into "mcQuestionArrayList" within Test class
+     * @param mcQuestionArrayList is passed from Test class to be populated
+     */
     private void initialize(ArrayList<mcQuestion> mcQuestionArrayList) {
         mcQuestion mcQuestion;
 
@@ -239,6 +244,9 @@ public class Test extends AppCompatActivity {
         mcQuestionArrayList.add(mcQuestion);
     }
 
+    /**
+     * Method updates question text along with choices to the current question using questionIndex as a guide
+     */
     private void updateQuestion() {
         questionText.setText(mcQuestionArrayList.get(questionIndex).getQuestion());
         choice1.setText(mcQuestionArrayList.get(questionIndex).choices.get(0));
@@ -247,6 +255,12 @@ public class Test extends AppCompatActivity {
         choice4.setText(mcQuestionArrayList.get(questionIndex).choices.get(3));
     }
 
+    /**
+     * Method checks question's answer variable against the given answer and increments questionsRight
+     * if the answer is correct
+     * @param question holds the current question
+     * @param givenAnswerIndex identifies the right choice by it's index within mcQuestion.choices array list
+     */
     private void checkAnswer(mcQuestion question, int givenAnswerIndex) {
         if (givenAnswerIndex == question.getAnswerIndex()) {
             questionsRight++;
@@ -256,6 +270,9 @@ public class Test extends AppCompatActivity {
         }
     }
 
+    /**
+     * Reveals the user's score by hiding choiceGroup, submit/explain buttons, and setting scoreText to your final score
+     */
     private void showScore() {
         scoreText.setVisibility(View.VISIBLE);
         scoreText.setText("Your Score is : " + questionsRight + " out of " + mcQuestionArrayList.size());

@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * The type Practice.
+ */
 public class practice extends AppCompatActivity {
     private TextView mTextMessage;
 
