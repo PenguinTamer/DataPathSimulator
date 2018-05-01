@@ -15,7 +15,23 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Test.java contains logic for Test activity
+ */
 public class Test extends AppCompatActivity {
+    /**
+     * @param mcQuestionArrayList Holds all mcQuestion objects for the multiple choice test
+     * @param questionIndex Tracks the current question displayed
+     * @param questionsRight Keeps track of the number questions answered correctly
+     * @param questionText is the handle for the primary textbox which displays the question to be answered
+     * @param scoreText is the handle for the textbox that displays the user's score
+     * @param choiceGroup is the handle for the radio button group containing the 4 answer choices
+     * @param choice1 handle for radio button that contains answer choice 1
+     * @param choice2 handle for radio button that contains answer choice 2
+     * @param choice3 handle for radio button that contains answer choice 3
+     * @param choice4 handle for radio button that contains answer choice 4
+     * @param
+     */
     //Variables
     private ArrayList<mcQuestion> mcQuestionArrayList;
     private int questionIndex = 0;
