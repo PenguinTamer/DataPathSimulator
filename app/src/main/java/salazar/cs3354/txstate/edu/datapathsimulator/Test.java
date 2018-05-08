@@ -16,37 +16,41 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
- * Test.java contains logic for Test activity
+ * Test.java contains logic for Test activity, a multiple choice test.
+ * It cycles through given questions (defined in the initialize method) by updating a {@link TextView} which
+ * contains the question and a {@link RadioGroup} which contain the answer choices. It also displays
+ * your score at the end.
  */
 public class Test extends AppCompatActivity {
-    /**
-     * @param mcQuestionArrayList Holds all mcQuestion objects for the multiple choice test
-     * @param questionIndex Tracks the current question displayed
-     * @param questionsRight Keeps track of the number questions answered correctly
-     * @param questionText is the handle for the primary textbox which displays the question to be answered
-     * @param scoreText is the handle for the textbox that displays the user's score
-     * @param choiceGroup is the handle for the radio button group containing the 4 answer choices
-     * @param choice1 is a handle for radio button that contains answer choice 1
-     * @param choice2 is a handle for radio button that contains answer choice 2
-     * @param choice3  is a handle for radio button that contains answer choice 3
-     * @param choice4 is a handle for radio button that contains answer choice 4
-     * @param explainButton is a handle for the button which lets you view the answer activities
-     * @param submitButton is a handle for the submit button that must be pressed to commit a question answer
-     */
+
     //Variables
+    /**Holds all mcQuestion objects for the multiple choice test*/
     private ArrayList<mcQuestion> mcQuestionArrayList;
-    private int questionIndex = 0;
-    private int questionsRight = 0;
+    /**Tracks the current question displayed*/
+    /**Keeps track of the number questions answered correctly*/
+    private int questionIndex = 0, questionsRight = 0;
+
     //Handles
-    private TextView questionText;
-    private TextView scoreText;
+    /**is the handle for the primary text box which displays the question to be answered*/
+    /**is the handle for the text box that displays the user's score*/
+    private TextView questionText,scoreText;
+    /**is the handle for the radio button group containing the 4 answer choices*/
     private RadioGroup choiceGroup;
+    /**is the handle for radio button that contains answer choice 1*/
+    /**is the handle for radio button that contains answer choice 2*/
+    /**is the handle for radio button that contains answer choice 3*/
+    /**is the handle for radio button that contains answer choice 4*/
     private RadioButton choice1, choice2, choice3, choice4;
+    /**is the handle for the button which lets you view the answer activities*/
+    /**is the handle for the submit button that must be pressed to commit a question answer*/
     private Button explainButton, submitButton;
 
+    /**Provides an {@link android.view.View.OnClickListener} for the bottom navigation that determines
+     * which button was pressed and takes the user to the corresponding activity
+     * @param intent provides the means to start new activities (E.g. Home, Practice, and Test)
+     * */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Intent intent;
@@ -68,7 +72,7 @@ public class Test extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        //init all handles
+        //Initialization all handles by associating them to specific UI widgets by ID.
         questionText = findViewById(R.id.questionText);
         scoreText = findViewById(R.id.score);
         choiceGroup = findViewById(R.id.choiceGroup);
