@@ -58,6 +58,9 @@ public class DataPathSim extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_path_sim);
 
+        /**Holds the type of question to be passed to new activity*/
+        final Bundle bundle = new Bundle();
+        //Initialize handles
         aluButton = findViewById(R.id.dataPathSim_ALU_Button);
         loadButton = findViewById(R.id.dataPathSim_Load_Button);
         storeButton = findViewById(R.id.dataPathSim_Store_Button);
@@ -66,6 +69,8 @@ public class DataPathSim extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
+                bundle.putChar("type", 'A');
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -74,6 +79,8 @@ public class DataPathSim extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
+                bundle.putChar("type", 'L');
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -82,6 +89,8 @@ public class DataPathSim extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
+                bundle.putChar("type", 'S');
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });

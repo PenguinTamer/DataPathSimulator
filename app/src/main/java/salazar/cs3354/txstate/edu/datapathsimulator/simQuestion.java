@@ -34,11 +34,22 @@ public class simQuestion extends question {
     }
 
     /**
-     * Sets type.
+     * Sets type if within parameters (ALU, LOAD, STORE).
      *
      * @param type the type of instruction
      */
     public void setType(char type) {
-        this.type = type;
+        switch (type) {
+            case 'A':
+            case 'a':
+            case 'L':
+            case 'l':
+            case 'S':
+            case 's':
+                this.type = type;
+                break;
+            default:
+                System.out.println("Please enter a proper instruction type for simQuestion qID: " + this.getqID());
+        }
     }
 }
