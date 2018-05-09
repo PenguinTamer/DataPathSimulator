@@ -3,12 +3,13 @@ package salazar.cs3354.txstate.edu.datapathsimulator;
 import java.util.ArrayList;
 
 /**
- * The type Mc question.
+ * A Multiple choice question. It is displayed in {@link Test} activity.
+ * Extends {@link question}.
  */
 public class mcQuestion extends salazar.cs3354.txstate.edu.datapathsimulator.question {
     private int answerIndex;
     /**
-     * The Choices.
+     * The answer choices for the question.
      */
     public ArrayList<String> choices = new ArrayList<>();
 

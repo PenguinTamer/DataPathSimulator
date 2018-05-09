@@ -6,14 +6,19 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 /**
- * The type Practice.
+ * Contains basic navigation functions for practice activity which contains slides of relevant
+ * information for the test section of the app
  */
 public class practice extends AppCompatActivity {
-    private TextView mTextMessage;
 
+    /**
+     * Provides an {@link android.view.View.OnClickListener} for the bottom navigation that determines
+     * which button was pressed and takes the user to the corresponding activity
+     *
+     * @param intent provides the means to start new activities (E.g. Home, Practice, and Test)
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -39,7 +44,6 @@ public class practice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }

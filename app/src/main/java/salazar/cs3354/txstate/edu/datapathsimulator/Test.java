@@ -68,6 +68,12 @@ public class Test extends AppCompatActivity {
         }
     };
 
+    /**
+     * Holds all logic that execute on creation of activity. Handles are initialized and
+     * {@link android.view.View.OnClickListener}'s are set for all button and radiobutton handles.
+     * <p>
+     * Questions are loaded in to UI based on the questionIndex
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

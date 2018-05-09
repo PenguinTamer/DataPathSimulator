@@ -1,9 +1,11 @@
 package salazar.cs3354.txstate.edu.datapathsimulator;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
+/**
+ * The type Answer 2.
+ */
 public class answer2 extends Activity {
 
     @Override

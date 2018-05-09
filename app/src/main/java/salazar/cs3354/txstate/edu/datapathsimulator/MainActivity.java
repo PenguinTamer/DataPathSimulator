@@ -7,8 +7,17 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+/**
+ * Contains basic navigation function for the Home activity (MainActivity)
+ */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Provides an {@link android.view.View.OnClickListener} for the bottom navigation that determines
+     * which button was pressed and takes the user to the corresponding activity
+     *
+     * @param intent provides the means to start new activities (E.g. Home, Practice, and Test)
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 

@@ -1,7 +1,7 @@
 package salazar.cs3354.txstate.edu.datapathsimulator;
 
 /**
- * An abstract class that contains
+ * An abstract class that contains common parameters for both sim and multiple choice questions.
  */
 public abstract class question {
     private String question;
@@ -20,7 +20,8 @@ public abstract class question {
     /**
      * Sets info id.
      *
-     * @param infoID the info id
+     * @param infoID pertains to the ID of the activity that contains relevant information for the
+     *               current question
      */
     public void setInfoID(int infoID) {
         this.infoID = infoID;
@@ -38,7 +39,7 @@ public abstract class question {
     /**
      * Sets question.
      *
-     * @param question the question
+     * @param question the question text
      */
     public void setQuestion(String question) {
         this.question = question;
@@ -56,7 +57,7 @@ public abstract class question {
     /**
      * Sets id.
      *
-     * @param qID the q id
+     * @param qID the question ID
      */
     public void setqID(int qID) {
         this.qID = qID;

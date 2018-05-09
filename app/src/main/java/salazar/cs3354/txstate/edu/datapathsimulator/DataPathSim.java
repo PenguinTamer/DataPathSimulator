@@ -9,12 +9,26 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Contains Logic for DataPathSim activity. Allows the user to navigate different questions based
+ * on instruction types. ALU, Store, or Load
+ */
 public class DataPathSim extends AppCompatActivity {
 
+    /**The handle for the ALU Button that navigates to the ALU Sim question*/
+    /**The handle for the Load Button that navigates to the Load Sim question*/
+    /**
+     * The handle for the Store Button that navigates to the Store Sim question
+     */
     private Button aluButton, loadButton, storeButton;
 
+    /**Provides an {@link android.view.View.OnClickListener} for the bottom navigation that determines
+     * which button was pressed and takes the user to the corresponding activity
+     * @param intent provides the means to start new activities (E.g. Home, Practice, and Test)
+     * */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -34,6 +48,10 @@ public class DataPathSim extends AppCompatActivity {
         }
     };
 
+    /**
+     *Holds all logic that execute on creation of activity. Handles are initialized and
+     * {@link android.view.View.OnClickListener}'s are set for each of the three navigation buttons.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

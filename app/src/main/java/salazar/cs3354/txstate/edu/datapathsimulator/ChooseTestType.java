@@ -20,6 +20,12 @@ public class ChooseTestType extends AppCompatActivity {
      */
     Button dpSimButton, multipleChoiceButton;
 
+    /**
+     * Provides an {@link android.view.View.OnClickListener} for the bottom navigation that determines
+     * which button was pressed and takes the user to the corresponding activity
+     *
+     * @param intent provides the means to start new activities (E.g. Home, Practice, and Test)
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -38,6 +44,10 @@ public class ChooseTestType extends AppCompatActivity {
         }
     };
 
+    /**
+     *Holds all logic that execute on creation of activity. Handles are initialized and
+     * {@link android.view.View.OnClickListener}'s are set for each of the two navigation buttons.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
