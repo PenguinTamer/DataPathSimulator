@@ -1,71 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Sim">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
-
     <ImageView
-        android:id="@+id/simBackdrop"
+        android:id="@+id/imageView49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/blankdatapath" />
-
-    <EditText
-        android:id="@+id/answerIn_Sim"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginStart="84dp"
-        android:inputType="phone"
-        android:text="TextView"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView14" />
+        app:srcCompat="@drawable/emptydatapath" />
 
     <TextView
-        android:id="@+id/activity_Sim_TextView_instruction_type"
-        android:layout_width="0dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="134dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/textView20"
+        android:layout_width="306dp"
+        android:layout_height="48dp"
         android:text="Instruction Type"
-        android:textAlignment="center"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/activity_Sim_TextView_node6"
-        app:layout_constraintEnd_toStartOf="@+id/activity_Sim_TextView_node13"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</RelativeLayout>
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="8dp" />
+</android.support.constraint.ConstraintLayout>
