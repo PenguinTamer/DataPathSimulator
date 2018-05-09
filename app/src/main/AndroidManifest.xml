@@ -117,7 +117,8 @@
         <activity
             android:name=".Sim"
             android:label="@string/title_activity_data_path_sim"
-            android:parentActivityName=".DataPathSim">
+            android:parentActivityName=".DataPathSim"
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DataPathSim" />
