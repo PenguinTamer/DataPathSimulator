@@ -79,6 +79,9 @@ public class Test extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
         //Initialization all handles by associating them to specific UI widgets by ID.
         questionText = findViewById(R.id.questionText);
         scoreText = findViewById(R.id.score);
@@ -154,9 +157,6 @@ public class Test extends AppCompatActivity {
                 startActivity(changeActivity);
             }
         });
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     /**

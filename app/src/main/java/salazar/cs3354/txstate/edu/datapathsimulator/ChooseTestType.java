@@ -36,9 +36,11 @@ public class ChooseTestType extends AppCompatActivity {
                 case R.id.navigation_home:
                     intent = new Intent(ChooseTestType.this, MainActivity.class);
                     startActivity(intent);
+                    return true;
                 case R.id.navigation_practice:
                     intent = new Intent(ChooseTestType.this, practice.class);
                     startActivity(intent);
+                    return true;
             }
             return false;
         }
@@ -53,6 +55,8 @@ public class ChooseTestType extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_test_type);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //Initializing handles
         dpSimButton = findViewById(R.id.acvitity_ChooseTestType_Button_DP_Sim);

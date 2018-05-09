@@ -37,12 +37,15 @@ public class DataPathSim extends AppCompatActivity {
                 case R.id.navigation_home:
                     intent = new Intent(DataPathSim.this, MainActivity.class);
                     startActivity(intent);
+                    return true;
                 case R.id.navigation_practice:
                     intent = new Intent(DataPathSim.this, practice.class);
                     startActivity(intent);
+                    return true;
                 case R.id.navigation_test:
                     intent = new Intent(DataPathSim.this, ChooseTestType.class);
                     startActivity(intent);
+                    return true;
             }
             return false;
         }
@@ -57,6 +60,8 @@ public class DataPathSim extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_path_sim);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         /**Holds the type of question to be passed to new activity*/
         final Bundle bundle = new Bundle();
@@ -94,6 +99,7 @@ public class DataPathSim extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
 }
