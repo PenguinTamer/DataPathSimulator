@@ -19,8 +19,10 @@
     <string name="title_activity_answer6">Cheat Sheet</string>
     <string name="title_activity_answer7">Cheat Sheet</string>
     <string name="intro">Use the "Practice" section to study the material and the "Test" section to test you knowledge! \n\nNavigate back to the home page at any time using the navigation bar below.</string>
-    <string name="title_activity_choose_test_type">ChooseTestType</string>
+    <string name="title_activity_choose_test_type">Choose Test Type</string>
 
     <!-- ChooseTestType Strings -->
     <string name="info_activity_ChooseTestType">Please select the type of test</string>
+    <!-- DataPathSim Strings-->
+    <string name="info_activity_DataPathSim">Please select the type of instruction</string>
 </resources>

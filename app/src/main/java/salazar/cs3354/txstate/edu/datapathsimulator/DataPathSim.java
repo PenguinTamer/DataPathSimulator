@@ -6,9 +6,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class DataPathSim extends AppCompatActivity {
 
+    private Button aluButton, loadButton, storeButton;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -36,6 +39,33 @@ public class DataPathSim extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_path_sim);
 
+        aluButton = findViewById(R.id.dataPathSim_ALU_Button);
+        loadButton = findViewById(R.id.dataPathSim_Load_Button);
+        storeButton = findViewById(R.id.dataPathSim_Store_Button);
+
+        aluButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                startActivity(intent);
+            }
+        });
+
+        loadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                startActivity(intent);
+            }
+        });
+
+        storeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                startActivity(intent);
+            }
+        });
     }
 
 }

@@ -6,11 +6,19 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 
+/**
+ * Navigation activity for choosing the type of test the user would like to take, multiple choice or data path sim.
+ * The user selects the type using two buttons, DpSim button and multipleChoiceButton.
+ */
 public class ChooseTestType extends AppCompatActivity {
-
-    private TextView mTextMessage;
+    /**Handle for data path simulator navigation button*/
+    /**
+     * Handle for Multiple Choice navigation button
+     */
+    Button dpSimButton, multipleChoiceButton;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,9 +43,24 @@ public class ChooseTestType extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_test_type);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //Initializing handles
+        dpSimButton = findViewById(R.id.acvitity_ChooseTestType_Button_DP_Sim);
+        multipleChoiceButton = findViewById(R.id.acvitity_ChooseTestType_Button_MultipleChoice);
+
+        dpSimButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChooseTestType.this, DataPathSim.class);
+                startActivity(intent);
+            }
+        });
+        multipleChoiceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChooseTestType.this, Test.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

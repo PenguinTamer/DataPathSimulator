@@ -5,20 +5,51 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChooseTestType">
+    tools:context=".ChooseTestType"
+    tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:id="@+id/info_TextView_ChooseTestType"
-        android:layout_width="276dp"
-        android:layout_height="31dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="172dp"
-        android:text="@string/info_activity_ChooseTestType"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="121dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="176dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/info_TextView_ChooseTestType"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="@string/info_activity_ChooseTestType"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="44dp"
+            tools:layout_editor_absoluteY="172dp" />
+
+        <Button
+            android:id="@+id/acvitity_ChooseTestType_Button_DP_Sim"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="DP Sim"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="227dp" />
+
+        <Button
+            android:id="@+id/acvitity_ChooseTestType_Button_MultipleChoice"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Multiple Choice"
+            tools:layout_editor_absoluteX="192dp"
+            tools:layout_editor_absoluteY="227dp" />
+
+    </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -26,33 +57,9 @@
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acvitity_ChooseTestType_Button_DP_Sim"
-        app:menu="@menu/navigation" />
-
-    <Button
-        android:id="@+id/acvitity_ChooseTestType_Button_DP_Sim"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="173dp"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="228dp"
-        android:text="DP Sim"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toStartOf="@+id/acvitity_ChooseTestType_Button_MultipleChoice"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/acvitity_ChooseTestType_Button_MultipleChoice"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="86dp"
-        android:text="Multiple Choice"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/acvitity_ChooseTestType_Button_DP_Sim"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:menu="@menu/navigation" />
 
 </android.support.constraint.ConstraintLayout>

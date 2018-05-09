@@ -8,8 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 /**
  * The type Practice.
  */
@@ -28,7 +26,7 @@ public class practice extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_test:
-                    intent = new Intent(practice.this, Test.class);
+                    intent = new Intent(practice.this, ChooseTestType.class);
                     startActivity(intent);
                     return true;
             }

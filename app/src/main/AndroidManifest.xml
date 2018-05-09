@@ -30,18 +30,18 @@
         <activity
             android:name=".Test"
             android:label="@string/title_activity_test"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".ChooseTestType">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="salazar.cs3354.txstate.edu.datapathsimulator.MainActivity" />
+                android:value="salazar.cs3354.txstate.edu.datapathsimulator.ChooseTestType" />
         </activity>
         <activity
             android:name=".DataPathSim"
             android:label="@string/title_activity_data_path_sim"
-            android:parentActivityName=".practice">
+            android:parentActivityName=".ChooseTestType">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="salazar.cs3354.txstate.edu.datapathsimulator.practice" />
+                android:value="salazar.cs3354.txstate.edu.datapathsimulator.ChooseTestType" />
         </activity>
         <activity
             android:name=".answer1"
