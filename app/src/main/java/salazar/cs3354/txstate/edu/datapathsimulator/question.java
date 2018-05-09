@@ -1,7 +1,7 @@
 package salazar.cs3354.txstate.edu.datapathsimulator;
 
 /**
- * The type Question.
+ * An abstract class that contains
  */
 public abstract class question {
     private String question;

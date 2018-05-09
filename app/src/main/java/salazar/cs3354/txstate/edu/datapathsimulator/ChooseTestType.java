@@ -6,9 +6,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-public class DataPathSim extends AppCompatActivity {
+public class ChooseTestType extends AppCompatActivity {
 
+    private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -18,13 +20,10 @@ public class DataPathSim extends AppCompatActivity {
             Intent intent;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    intent = new Intent(DataPathSim.this, MainActivity.class);
+                    intent = new Intent(ChooseTestType.this, MainActivity.class);
                     startActivity(intent);
                 case R.id.navigation_practice:
-                    intent = new Intent(DataPathSim.this, practice.class);
-                    startActivity(intent);
-                case R.id.navigation_test:
-                    intent = new Intent(DataPathSim.this, ChooseTestType.class);
+                    intent = new Intent(ChooseTestType.this, practice.class);
                     startActivity(intent);
             }
             return false;
@@ -34,8 +33,11 @@ public class DataPathSim extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_path_sim);
+        setContentView(R.layout.activity_choose_test_type);
 
+        mTextMessage = (TextView) findViewById(R.id.message);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
 }

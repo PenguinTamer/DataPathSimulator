@@ -45,9 +45,9 @@
         </activity>
         <activity
             android:name=".answer1"
-            android:screenOrientation="landscape"
             android:label="@string/title_activity_answer1"
-            android:parentActivityName=".Test">
+            android:parentActivityName=".Test"
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.Test" />
@@ -55,8 +55,8 @@
         <activity
             android:name=".answer2"
             android:label="@string/title_activity_answer2"
-            android:screenOrientation="landscape"
-            android:parentActivityName=".Test">
+            android:parentActivityName=".Test"
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.Test" />
@@ -64,8 +64,8 @@
         <activity
             android:name=".answer3"
             android:label="@string/title_activity_answer3"
-            android:screenOrientation="landscape"
-            android:parentActivityName=".Test">
+            android:parentActivityName=".Test"
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.Test" />
@@ -73,8 +73,8 @@
         <activity
             android:name=".answer4"
             android:label="@string/title_activity_answer4"
-            android:screenOrientation="landscape"
-            android:parentActivityName=".Test">
+            android:parentActivityName=".Test"
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.Test" />
@@ -82,8 +82,8 @@
         <activity
             android:name=".answer58"
             android:label="@string/title_activity_answer5"
-            android:screenOrientation="landscape"
-            android:parentActivityName=".Test">
+            android:parentActivityName=".Test"
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.Test" />
@@ -91,8 +91,8 @@
         <activity
             android:name=".answer6"
             android:label="@string/title_activity_answer6"
-            android:screenOrientation="landscape"
-            android:parentActivityName=".Test">
+            android:parentActivityName=".Test"
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.Test" />
@@ -100,11 +100,19 @@
         <activity
             android:name=".answer7"
             android:label="@string/title_activity_answer7"
-            android:screenOrientation="landscape"
-            android:parentActivityName=".Test">
+            android:parentActivityName=".Test"
+            android:screenOrientation="landscape">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.Test" />
+        </activity>
+        <activity
+            android:name=".ChooseTestType"
+            android:label="@string/title_activity_choose_test_type"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="salazar.cs3354.txstate.edu.datapathsimulator.MainActivity" />
         </activity>
     </application>
 

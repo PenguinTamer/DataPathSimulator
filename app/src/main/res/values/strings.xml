@@ -19,4 +19,8 @@
     <string name="title_activity_answer6">Cheat Sheet</string>
     <string name="title_activity_answer7">Cheat Sheet</string>
     <string name="intro">Use the "Practice" section to study the material and the "Test" section to test you knowledge! \n\nNavigate back to the home page at any time using the navigation bar below.</string>
+    <string name="title_activity_choose_test_type">ChooseTestType</string>
+
+    <!-- ChooseTestType Strings -->
+    <string name="info_activity_ChooseTestType">Please select the type of test</string>
 </resources>
