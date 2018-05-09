@@ -25,4 +25,24 @@
     <string name="info_activity_ChooseTestType">Please select the type of test</string>
     <!-- DataPathSim Strings-->
     <string name="info_activity_DataPathSim">Please select the type of instruction</string>
+    <!-- simQuestion spinners -->
+    <string-array name="simQuestionChoices">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string name="prompt1">Choose starting node</string>
+    <string name="prompt2">Choose ending node</string>
 </resources>
