@@ -4,8 +4,11 @@ package salazar.cs3354.txstate.edu.datapathsimulator;
  * An abstract class that contains common parameters for both sim and multiple choice questions.
  */
 public abstract class question {
+    /**The question text*/
     private String question;
+    /**The question ID, used to keep track of which question this is*/
     private int qID;
+    /**pertains to the ID of the activity that contains relevant information for the current question*/
     private int infoID;
 
     /**
@@ -20,8 +23,7 @@ public abstract class question {
     /**
      * Sets info id.
      *
-     * @param infoID pertains to the ID of the activity that contains relevant information for the
-     *               current question
+     * @param infoID the info ID
      */
     public void setInfoID(int infoID) {
         this.infoID = infoID;

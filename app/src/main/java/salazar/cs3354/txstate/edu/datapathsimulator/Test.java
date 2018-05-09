@@ -73,6 +73,7 @@ public class Test extends AppCompatActivity {
      * {@link android.view.View.OnClickListener}'s are set for all button and radiobutton handles.
      * <p>
      * Questions are loaded in to UI based on the questionIndex
+     * @param savedInstanceState keeps previous states for restoration of activity
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

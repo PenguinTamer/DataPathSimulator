@@ -37,7 +37,10 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
-
+    /**
+     * Initializes the content view for the activity
+     * @param savedInstanceState keeps previous states for restoration of activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

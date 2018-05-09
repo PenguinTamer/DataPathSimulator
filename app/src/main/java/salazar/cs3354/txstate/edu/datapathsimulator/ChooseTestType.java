@@ -47,6 +47,7 @@ public class ChooseTestType extends AppCompatActivity {
     /**
      *Holds all logic that execute on creation of activity. Handles are initialized and
      * {@link android.view.View.OnClickListener}'s are set for each of the two navigation buttons.
+     * @param savedInstanceState keeps previous states for restoration of activity
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
