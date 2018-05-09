@@ -14,6 +14,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/blankdatapath" />
 
+    <EditText
+        android:id="@+id/textView19"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginStart="84dp"
+        android:inputType="phone"
+        android:text="TextView"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView14" />
+
     <TextView
         android:id="@+id/textView18"
         android:layout_width="0dp"
