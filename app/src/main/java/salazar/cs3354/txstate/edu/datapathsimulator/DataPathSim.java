@@ -73,7 +73,7 @@ public class DataPathSim extends AppCompatActivity {
         aluButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(DataPathSim.this, Sim.class);
                 bundle.putChar("type", 'A');
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -83,7 +83,7 @@ public class DataPathSim extends AppCompatActivity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(DataPathSim.this, Sim.class);
                 bundle.putChar("type", 'L');
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -93,7 +93,7 @@ public class DataPathSim extends AppCompatActivity {
         storeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(DataPathSim.this, Sim.class);
                 bundle.putChar("type", 'S');
                 intent.putExtras(bundle);
                 startActivity(intent);

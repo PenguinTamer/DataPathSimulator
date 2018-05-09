@@ -114,6 +114,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="salazar.cs3354.txstate.edu.datapathsimulator.MainActivity" />
         </activity>
+        <activity
+            android:name=".Sim"
+            android:label="@string/title_activity_data_path_sim"
+            android:parentActivityName=".DataPathSim">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DataPathSim" />
+        </activity>
     </application>
 
 </manifest>
