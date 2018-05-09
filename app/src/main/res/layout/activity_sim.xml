@@ -49,12 +49,16 @@
                     android:id="@+id/spinner19"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt1"
                     android:layout_weight="1" />
 
                 <Spinner
                     android:id="@+id/spinner20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt2"
                     android:layout_weight="1" />
             </LinearLayout>
         </TableRow>
@@ -72,12 +76,16 @@
                     android:id="@+id/spinner17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt1"
                     android:layout_weight="1" />
 
                 <Spinner
                     android:id="@+id/spinner18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt2"
                     android:layout_weight="1" />
             </LinearLayout>
         </TableRow>
@@ -95,12 +103,16 @@
                     android:id="@+id/spinner15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt1"
                     android:layout_weight="1" />
 
                 <Spinner
                     android:id="@+id/spinner16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt2"
                     android:layout_weight="1" />
             </LinearLayout>
         </TableRow>
@@ -118,12 +130,16 @@
                     android:id="@+id/spinner13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt1"
                     android:layout_weight="1" />
 
                 <Spinner
                     android:id="@+id/spinner14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt2"
                     android:layout_weight="1" />
             </LinearLayout>
         </TableRow>
@@ -141,12 +157,16 @@
                     android:id="@+id/spinner7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt1"
                     android:layout_weight="1" />
 
                 <Spinner
                     android:id="@+id/spinner8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt2"
                     android:layout_weight="1" />
             </LinearLayout>
         </TableRow>
@@ -164,12 +184,16 @@
                     android:id="@+id/spinner11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt1"
                     android:layout_weight="1" />
 
                 <Spinner
                     android:id="@+id/spinner12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt2"
                     android:layout_weight="1" />
             </LinearLayout>
         </TableRow>
@@ -187,12 +211,16 @@
                     android:id="@+id/spinner9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt1"
                     android:layout_weight="1" />
 
                 <Spinner
                     android:id="@+id/spinner10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/simQuestionChoices"
+                    android:prompt="@string/prompt2"
                     android:layout_weight="1" />
             </LinearLayout>
 
