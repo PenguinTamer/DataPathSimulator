@@ -55,6 +55,8 @@ public class Sim extends AppCompatActivity {
         setContentView(R.layout.activity_sim);
 
         //Initialize handles
+        instType = findViewById(R.id.activity_sim_instructionType_Textview);
+        submitButton = findViewById(R.id.activity_sim_submitButton);
         r1spinner1 = findViewById(R.id.r1spinner1);
         r1spinner2 = findViewById(R.id.r1spinner2);
         r2spinner1 = findViewById(R.id.r2spinner1);
@@ -70,12 +72,13 @@ public class Sim extends AppCompatActivity {
         r7spinner1 = findViewById(R.id.r7spinner1);
         r7spinner2 = findViewById(R.id.r7spinner2);
         //Initialize variables
-        question = initialize(getIntent().getExtras().getChar("type"));
+        final char type = getIntent().getExtras().getChar("type");
+        question = initialize(type);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkAnswers(question, getAnswers())) {
+                if (checkAnswers(question, getAnswers(type))) {
                     Toast.makeText(getApplicationContext(), "You got it right!", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "You got it wrong!", Toast.LENGTH_LONG).show();
@@ -102,6 +105,9 @@ public class Sim extends AppCompatActivity {
                 question.answers.add(710);
                 question.answers.add(811);
                 question.answers.add(125);
+                instType.setText("ALU Instruction");
+                r7spinner1.setVisibility(View.INVISIBLE);
+                r7spinner2.setVisibility(View.INVISIBLE);
                 break;
             case 'L':
             case 'l':
@@ -119,6 +125,7 @@ public class Sim extends AppCompatActivity {
                 question.answers.add(911);
                 question.answers.add(1213);
                 question.answers.add(1515);
+                instType.setText("Load Instruction");
                 break;
             case 'S':
             case 's':
@@ -136,6 +143,7 @@ public class Sim extends AppCompatActivity {
                 question.answers.add(911);
                 question.answers.add(1213);
                 question.answers.add(814);
+                instType.setText("Store Instruction");
                 break;
             default:
                 question = new simQuestion();
@@ -143,7 +151,7 @@ public class Sim extends AppCompatActivity {
         return question;
     }
 
-    private ArrayList getAnswers() {
+    private ArrayList getAnswers(char type) {
         ArrayList<Integer> userAnswers = new ArrayList<>();
         userAnswers.add(Integer.valueOf(r1spinner1.getSelectedItem().toString().concat(r1spinner2.getSelectedItem().toString())));
         userAnswers.add(Integer.valueOf(r2spinner1.getSelectedItem().toString().concat(r2spinner2.getSelectedItem().toString())));
@@ -151,17 +159,25 @@ public class Sim extends AppCompatActivity {
         userAnswers.add(Integer.valueOf(r4spinner1.getSelectedItem().toString().concat(r4spinner2.getSelectedItem().toString())));
         userAnswers.add(Integer.valueOf(r5spinner1.getSelectedItem().toString().concat(r5spinner2.getSelectedItem().toString())));
         userAnswers.add(Integer.valueOf(r6spinner1.getSelectedItem().toString().concat(r6spinner2.getSelectedItem().toString())));
+        if (type == 'A') {
+            return userAnswers;
+        }
         userAnswers.add(Integer.valueOf(r7spinner1.getSelectedItem().toString().concat(r7spinner2.getSelectedItem().toString())));
         return userAnswers;
     }
 
     private boolean checkAnswers(simQuestion question, ArrayList<Integer> userAnswers) {
-        for (int i = 0; i < question.answers.size(); i++)
-            for (int j = 0; j < userAnswers.size(); j++) {
-                if (question.answers.get(i) != userAnswers.get(j)) {
-                    return false;
+        Integer numCorrect = 0;
+        for (int i = 0; i < userAnswers.size(); i++) {
+            for (int j = 0; j < question.answers.size(); j++) {
+                if (userAnswers.get(i) == question.answers.get(j)) {
+                    numCorrect++;
                 }
             }
-        return true;
+        }
+        instType.setText(r1spinner1.getSelectedItem().toString().concat(r1spinner2.getSelectedItem().toString()));
+        if (numCorrect == question.answers.size())
+            return true;
+        else return false;
     }
 }

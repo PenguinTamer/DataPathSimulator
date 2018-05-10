@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/emptydatapath" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/activity_sim_instructionType_Textview"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginEnd="72dp"
@@ -31,11 +31,13 @@
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="162dp"
-        android:layout_height="176dp"
-        android:layout_marginBottom="76dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
         android:layout_marginEnd="68dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_marginTop="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/activity_sim_submitButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="match_parent"
@@ -243,5 +245,16 @@
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/activity_sim_submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_marginStart="31dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 </android.support.constraint.ConstraintLayout>
