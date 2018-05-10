@@ -80,6 +80,7 @@ public class Sim extends AppCompatActivity {
             public void onClick(View v) {
                 if (checkAnswers(question, getAnswers(type))) {
                     Toast.makeText(getApplicationContext(), "You got it right!", Toast.LENGTH_LONG).show();
+                    instType.setText("Congratulations!");
                 } else {
                     Toast.makeText(getApplicationContext(), "You got it wrong!", Toast.LENGTH_LONG).show();
                 }
@@ -87,6 +88,12 @@ public class Sim extends AppCompatActivity {
         });
     }
 
+    /**
+     * Initializes the question based on it's type
+     *
+     * @param type the question's type (ALU, LOAD, STORE)
+     * @return simquestion object
+     */
     private simQuestion initialize(char type) {
         simQuestion question;
         switch (type) {
@@ -151,6 +158,11 @@ public class Sim extends AppCompatActivity {
         return question;
     }
 
+    /**
+     * Pulls user answers and formats them into integers that are stored within userAnswers
+     * @param type the type of instruction
+     * @return ArrayList of formatted answers
+     */
     private ArrayList getAnswers(char type) {
         ArrayList<Integer> userAnswers = new ArrayList<>();
         userAnswers.add(Integer.valueOf(r1spinner1.getSelectedItem().toString().concat(r1spinner2.getSelectedItem().toString())));
@@ -166,16 +178,21 @@ public class Sim extends AppCompatActivity {
         return userAnswers;
     }
 
+    /**
+     * Checks given user answers against correct answers
+     * @param question question object. Contains correct answers
+     * @param userAnswers arraylist contiaining all given answers by users
+     * @return
+     */
     private boolean checkAnswers(simQuestion question, ArrayList<Integer> userAnswers) {
         Integer numCorrect = 0;
         for (int i = 0; i < userAnswers.size(); i++) {
             for (int j = 0; j < question.answers.size(); j++) {
-                if (userAnswers.get(i) == question.answers.get(j)) {
+                if (userAnswers.get(i).equals(question.answers.get(j))) {
                     numCorrect++;
                 }
             }
         }
-        instType.setText(r1spinner1.getSelectedItem().toString().concat(r1spinner2.getSelectedItem().toString()));
         if (numCorrect == question.answers.size())
             return true;
         else return false;
