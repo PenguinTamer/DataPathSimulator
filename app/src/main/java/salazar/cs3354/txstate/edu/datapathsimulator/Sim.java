@@ -96,14 +96,12 @@ public class Sim extends AppCompatActivity {
                 question.setqID(-1);
                 question.setInfoID(-1);
                 //Add Answers
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
+                question.answers.add(12);
+                question.answers.add(13);
+                question.answers.add(14);
+                question.answers.add(710);
+                question.answers.add(811);
+                question.answers.add(125);
                 break;
             case 'L':
             case 'l':
@@ -114,14 +112,13 @@ public class Sim extends AppCompatActivity {
                 question.setqID(-1);
                 question.setInfoID(-1);
                 //Add Answers
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
+                question.answers.add(12);
+                question.answers.add(14);
+                question.answers.add(16);
+                question.answers.add(710);
+                question.answers.add(911);
+                question.answers.add(1213);
+                question.answers.add(1515);
                 break;
             case 'S':
             case 's':
@@ -132,14 +129,13 @@ public class Sim extends AppCompatActivity {
                 question.setqID(-1);
                 question.setInfoID(-1);
                 //Add Answers
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
-                question.answers.add(null);
+                question.answers.add(12);
+                question.answers.add(13);
+                question.answers.add(16);
+                question.answers.add(710);
+                question.answers.add(911);
+                question.answers.add(1213);
+                question.answers.add(814);
                 break;
             default:
                 question = new simQuestion();
